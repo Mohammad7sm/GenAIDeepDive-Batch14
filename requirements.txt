@@ -7,3 +7,5 @@ langchain_openai
 langchain-google-genai
 
 langchain-ollama
+
+langchain-huggingface

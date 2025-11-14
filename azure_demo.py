@@ -1,0 +1,27 @@
+from langchain_openai import AzureChatOpenAI
+from langchain_core.prompts import PromptTemplate
+from dotenv import load_dotenv
+import os
+
+load_dotenv(override=True)
+
+# Initialize AzureOpenAI for text completion
+llm = AzureChatOpenAI(
+    deployment_name="openai-deployment",  # Replace with your actual deployment name
+    model="gpt-4.1",
+    openai_api_type="azure",
+    api_version=os.getenv("AZURE_OPENAI_API_VERSION")
+
+)
+
+response = llm.invoke("What is AgenticAI in simple terms in 50 words?")
+
+print(response.content)
+
+#prompt = PromptTemplate.from_template("What is the capital of {country}?")
+
+#chain = prompt | llm
+
+#response = chain.invoke({"country": "India"})
+
+print(response.content)

@@ -11,3 +11,5 @@ langchain-ollama
 langchain-huggingface
 
 streamlit
+
+langchain-aws
